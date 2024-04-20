@@ -1,8 +1,7 @@
-import Nav from './Components/Nav.vue';
 <template>
   <div class="max-w-screen-2xl mx-auto">
     <!-- NAV -->
-    <div class="flex items-center justify-between pr-8">
+    <div class="flex items-center justify-between px-5">
       <div class="flex items-center gap-10">
         <nuxt-link to="/">
           <img
@@ -11,7 +10,7 @@ import Nav from './Components/Nav.vue';
             alt="logo makifaa"
           />
         </nuxt-link>
-        <ul class="flex items-center gap-5 font-semibold">
+        <ul class="sm:flex items-center gap-4 md:gap-5 font-semibold hidden">
           <li class="flex gap-1 cursor-pointer">
             <nuxt-link to="">Images</nuxt-link>
             <Icon
@@ -32,7 +31,7 @@ import Nav from './Components/Nav.vue';
         </ul>
       </div>
       <div>
-        <ul class="flex gap-10 items-center font-semibold">
+        <ul class="flex gap-4 md:gap-6 lg:gap-10 items-center font-semibold">
           <li class="flex gap-1 cursor-pointer">
             <p class="uppercase">fr</p>
             <Icon
@@ -40,8 +39,8 @@ import Nav from './Components/Nav.vue';
               name="material-symbols:keyboard-arrow-down-rounded"
             />
           </li>
-          <li class="flex gap-1 cursor-pointer">
-            <p>Aide</p>
+          <li class="md:block gap-1 cursor-pointer hidden">
+            Aide
           </li>
           <li class="flex gap-1 cursor-pointer">
             <nuxt-link
@@ -63,12 +62,14 @@ import Nav from './Components/Nav.vue';
       />
       <div class="absolute inset-0 bg-black opacity-80 h-full z-20"></div>
       <div
-        class="absolute text-white flex flex-col gap-6 h-full w-full justify-center items-center z-40"
+        class="absolute text-white flex flex-col gap-2 md:gap-4 lg:gap-6 h-full w-full justify-center items-center z-40"
       >
-        <h1 class="text-6xl font-bold text-center max-w-4xl">
+        <h1
+          class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-center w-4/5"
+        >
           Besoin de médias africains sur mesure pour vos projets ?
         </h1>
-        <p class="text-base">
+        <p class="text-base w-[90%] text-center">
           Accédez à une bibliothèque en constante évolution remplie d'images
           typiquement africaines
         </p>
@@ -79,10 +80,10 @@ import Nav from './Components/Nav.vue';
           <input
             type="search"
             placeholder="Rechercher les meilleures images pour votre projet créatif  "
-            class="w-96 py-4 px-4 rounded-l-xl text-black focus:outline-none text-lg"
+            class="sm:w-64 md:w-96 p-2 md:py-4 md:px-4 rounded-l-xl text-black focus:outline-none lg:text-lg"
           />
           <button
-            class="flex items-center bg-[#c07313] text-white px-6 py-4 rounded-r-xl font-semibold text-lg"
+            class="flex items-center bg-[#c07313] text-white p-2 md:px-6 md:py-4 rounded-r-xl lg:text-lg"
           >
             <Icon class="w-6 h-6" name="material-symbols-light:search" />
             Rechercher
@@ -90,5 +91,14 @@ import Nav from './Components/Nav.vue';
         </div>
       </div>
     </div>
+
+    <!-- ---------------------------------CATEGORIES---------------------------------------- -->
+    <Categories />
+    <Contributors />
   </div>
 </template>
+
+<script setup>
+import Categories from './Components/Categories.vue'
+import Contributors from './Components/Contributors.vue'
+</script>
